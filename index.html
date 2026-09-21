@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c6ff00">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="KOOLTrack">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>KOOLTrack</title>
+</head>
+<body>
+  <header>
+    <div class="brand"><span>🐨</span><div><h1>KOOLTrack</h1><small>K-O-O-L Audio</small></div></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p>VEHICLE MANAGEMENT</p>
+      <h2>Tu taller.<br><b>Tu historial.</b></h2>
+      <span>Registra y consulta cada vehículo que entra a K-O-O-L Audio.</span>
+    </section>
+
+    <section class="stats">
+      <div><b id="count">0</b><small>Vehículos</small></div>
+      <div><b id="jobs">0</b><small>Trabajos</small></div>
+    </section>
+
+    <div class="buttons">
+      <button onclick="openForm()">+ Nuevo vehículo</button>
+      <button class="light" onclick="showList()">🚗 Ver vehículos</button>
+    </div>
+
+    <section id="form" class="card hidden">
+      <h3>Nuevo vehículo</h3>
+      <input id="client" placeholder="Cliente">
+      <input id="phone" placeholder="Teléfono" type="tel">
+      <div class="row">
+        <input id="brand" placeholder="Marca">
+        <input id="model" placeholder="Modelo">
+      </div>
+      <div class="row">
+        <input id="year" placeholder="Año" type="number">
+        <input id="plate" placeholder="Placa">
+      </div>
+      <textarea id="job" placeholder="Trabajo solicitado"></textarea>
+      <button onclick="save()">Guardar vehículo</button>
+      <button class="light" onclick="closeForm()">Cancelar</button>
+    </section>
+
+    <section id="list" class="card hidden">
+      <div class="listhead"><h3>Vehículos</h3><button onclick="openForm()">+ Nuevo</button></div>
+      <div id="vehicles"></div>
+    </section>
+  </main>
+
+  <footer>🐨 KOOLTrack · K-O-O-L Audio</footer>
+  <script src="app.js"></script>
+</body>
+</html>
